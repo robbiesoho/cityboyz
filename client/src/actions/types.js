@@ -1,0 +1,5 @@
+export const GET_ARTICLES = "GET_ARTICLES";
+export const GET_ARTICLE = "GET_ARTICLE";
+export const ADD_ARTICLE = "ADD_ARTICLES";
+export const DELETE_ARTICLE = "DELETE_ARTICLES";
+export const ARTICLES_LOADING = "ARTICLES_LOADING";
