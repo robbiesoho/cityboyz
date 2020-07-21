@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Articles from "./components/Articles";
-import ArticleShow from "./components/ArticleShow";
+import Article from "./components/Article";
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -25,7 +25,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/" exact component={Articles} />
-            <Route exact path="/article/:id" component={ArticleShow} />
+            <Route exact path="/article/:id" component={Article} />
           </Switch>
         </Router>
       </div>

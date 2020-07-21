@@ -16,16 +16,12 @@ export default function (state = intialState, action) {
     case GET_ARTICLES:
       return {
         ...state,
+
         articles: action.payload,
         loading: false,
       };
     case GET_ARTICLE:
       return {
-        // article: {
-        //   // [action.payload.name]: action.payload,
-        //   // data: action.payload,
-        //   articles: action.payload,
-        // },
         ...state,
         article: action.payload,
         loading: false,

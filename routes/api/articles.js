@@ -1,12 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-// Article Model
 const Article = require("../../models/Article");
 
-// @route GET api/articles
-// @desc Get All Articles
-// @access Public
 router.get("/api/articles/", (req, res) => {
   Article.find()
     .sort({ date: -1 })
@@ -17,22 +13,31 @@ router.get("/api/articles/:id", (req, res) => {
   Article.findById(req.params.id).then((article) => res.json(article));
 });
 
-// @route POST api/articles
-// @desc Create A ARticle
-// @access Public
-router.post("/api/articles/", (req, res) => {
+router.post("/api/articles/:id", (req, res) => {
   const newArticle = new Article({
     name: req.body.name,
     author: req.body.author,
     body: req.body.body,
+    preview: req.body.preview,
+    authorId: req.body.authorId,
   });
 
   newArticle.save().then((article) => res.json(article));
 });
 
-// @route DELETE api/articles/:id
-// @desc DELETE A ARticle
-// @access Public
+router.patch("/api/articles/:id", (req, res) => {
+  Article.findById(req.params.id).then((article) => {
+    if (req.body._id) {
+      delete req.body._id;
+    }
+    for (let b in req.body) {
+      article[b] = req.body[b];
+    }
+    article.save();
+    res.json(article);
+  });
+});
+
 router.delete("/api/articles/:id", (req, res) => {
   Article.findById(req.params.id)
     .then((article) => article.remove().then(() => res.json({ success: true })))

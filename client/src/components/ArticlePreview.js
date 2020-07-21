@@ -6,6 +6,7 @@ class ArticlePreview extends Component {
   render() {
     const articlePath = {
       pathname: `/article/${this.props._id}`,
+      // authorId: this.props.authorId,
     };
 
     const article = this.props;

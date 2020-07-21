@@ -22,7 +22,7 @@ const ArticleSchema = new Schema({
   preview: {
     type: String,
   },
-  author: {
+  authorId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "articles",
     // required: true,

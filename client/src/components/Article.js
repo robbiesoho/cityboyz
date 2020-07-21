@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
-
 import { Link } from "react-router-dom";
-
 import { connect } from "react-redux";
 import { getArticle } from "../actions/articleActions";
+import { getAuthor } from "../actions/authorActions";
 import PropTypes from "prop-types";
 
-class ArticleShow extends Component {
+class Article extends Component {
   componentDidMount() {
     this.props.getArticle(this.props.match.params.id);
+    if (this.props.article.article) {
+      console.log("fuck");
+      console.log(this.props.article.article.authorId);
+      this.props.getAuthor(this.props.article.article.authorId);
+    }
   }
 
   render() {
@@ -23,7 +27,9 @@ class ArticleShow extends Component {
       if (typeof data === "undefined") {
         return;
       } else {
-        return data.body;
+        return data.body.split("\r").map((c) => {
+          return <p> {c} </p>;
+        });
       }
     }
     function checkAndRenderName() {
@@ -48,14 +54,6 @@ class ArticleShow extends Component {
       }
     }
 
-    function checkAndRender(poop) {
-      if (typeof data === "undefined") {
-        return;
-      } else {
-        return data.poop;
-      }
-    }
-
     return (
       <Container>
         <p>{checkAndRenderName()}</p>
@@ -63,18 +61,16 @@ class ArticleShow extends Component {
         <p>{checkAndRenderBody()}</p>
         <p>{checkAndRenderID()}</p>
         <br />
-        {/* {this.props.body.split("\r").map((c) => {
-          return <p> {c} </p>;
-        })} */}
-        <br />
+
         <Link to="/">Back to index</Link>
       </Container>
     );
   }
 }
 
-ArticleShow.propTypes = {
+Article.propTypes = {
   getArticle: PropTypes.func.isRequired,
+  getAuthor: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired,
 };
 
@@ -82,4 +78,4 @@ const mapStateToProps = (state) => ({
   article: state.article,
 });
 
-export default connect(mapStateToProps, { getArticle })(ArticleShow);
+export default connect(mapStateToProps, { getArticle, getAuthor })(Article);
