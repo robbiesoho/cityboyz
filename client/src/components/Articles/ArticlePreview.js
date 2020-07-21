@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
+
 import { Link } from "react-router-dom";
 
 class ArticlePreview extends Component {
@@ -9,9 +9,9 @@ class ArticlePreview extends Component {
     };
 
     const article = this.props;
-    const id = this.props._id;
+
     return (
-      <Container>
+      <div>
         {article.name}
         <br />
         {article.author}
@@ -19,7 +19,7 @@ class ArticlePreview extends Component {
         {article._id}
         <br />
         <Link to={articlePath}>link here</Link>
-      </Container>
+      </div>
     );
   }
 }

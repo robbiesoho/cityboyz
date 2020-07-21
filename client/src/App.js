@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Articles from "./components/Articles";
-import Article from "./components/Article";
+import Articles from "./components/Articles/Articles";
+import Article from "./components/Articles/Article";
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -12,14 +12,6 @@ import "./App.css";
 
 function App() {
   return (
-    // <Provider store={store}>
-    //   <div className="App">
-    //     <AppNavbar />
-    //     <Container>
-    //       <ArticleList />
-    //     </Container>
-    //   </div>
-    // </Provider>
     <Provider store={store}>
       <div className="App">
         <Router>
