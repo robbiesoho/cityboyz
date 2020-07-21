@@ -3,11 +3,11 @@ import { Container } from "reactstrap";
 
 import { connect } from "react-redux";
 
-class AuthorBlerb extends Component {
+class AuthorMark extends Component {
   render() {
     return (
       <Container>
-        <h1>This is a blerb for {this.props.author.name}</h1>
+        <p>by {this.props.author.name}</p>
       </Container>
     );
   }
@@ -17,4 +17,4 @@ const mapStateToProps = (state) => ({
   author: state.author.author,
 });
 
-export default connect(mapStateToProps, {})(AuthorBlerb);
+export default connect(mapStateToProps, {})(AuthorMark);

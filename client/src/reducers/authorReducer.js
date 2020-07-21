@@ -10,10 +10,10 @@ export default function (state = intialState, action) {
     case GET_AUTHOR:
       return {
         ...state,
-
         author: action.payload,
         loading: false,
       };
+
     case AUTHORS_LOADING:
       return {
         ...state,

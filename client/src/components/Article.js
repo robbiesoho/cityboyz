@@ -5,13 +5,16 @@ import { connect } from "react-redux";
 import { getArticle } from "../actions/articleActions";
 import { getAuthor } from "../actions/authorActions";
 import PropTypes from "prop-types";
+import AuthorBlerb from "./Authors/AuthorBlerb";
+import AuthorMark from "./Authors/AuthorMark";
 
 class Article extends Component {
   componentDidMount() {
     this.props.getArticle(this.props.match.params.id);
+  }
+
+  componentDidUpdate() {
     if (this.props.article.article) {
-      console.log("fuck");
-      console.log(this.props.article.article.authorId);
       this.props.getAuthor(this.props.article.article.authorId);
     }
   }
@@ -57,12 +60,13 @@ class Article extends Component {
     return (
       <Container>
         <p>{checkAndRenderName()}</p>
-        <p>{checkAndRenderAuthor()}</p>
+        <AuthorMark />
         <p>{checkAndRenderBody()}</p>
         <p>{checkAndRenderID()}</p>
         <br />
-
         <Link to="/">Back to index</Link>
+        <br />
+        <AuthorBlerb />
       </Container>
     );
   }
