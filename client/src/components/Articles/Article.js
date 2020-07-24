@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
+
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getArticle } from "../../actions/articleActions";
@@ -20,48 +20,30 @@ class Article extends Component {
   }
 
   render() {
-    if (this.props.article.loading) {
+    const data = this.props.article.article;
+
+    if (typeof data === "undefined") {
       return <p>Loading!</p>;
     }
 
-    const data = this.props.article.article;
-
-    function checkAndRenderBody() {
-      if (typeof data === "undefined") {
-        return;
-      } else {
-        return data.body.split("\r").map((c) => {
-          return <p> {c} </p>;
-        });
-      }
-    }
-    function checkAndRenderName() {
-      if (typeof data === "undefined") {
-        return;
-      } else {
-        return data.name;
-      }
-    }
-
-    function checkAndRenderID() {
-      if (typeof data === "undefined") {
-        return;
-      } else {
-        return data._id;
-      }
-    }
-
     return (
-      <Container>
-        <p>{checkAndRenderName()}</p>
+      <div class="article-container">
+        <div class="article-header"></div>
+
+        <p class="aritcle-name">{data.name}</p>
+        <p class="aritcle-preview">{data.preview}</p>
         <AuthorMark />
-        <p>{checkAndRenderBody()}</p>
-        <p>{checkAndRenderID()}</p>
-        <br />
-        <Link to="/">Back to index</Link>
-        <br />
+        <p class="aritcle-body">
+          {data.body.split("\r").map((c) => {
+            return <p class="article-paragraph"> {c} </p>;
+          })}
+        </p>
+        <div class="article-separator"></div>
         <AuthorBlerb />
-      </Container>
+        <Link to="/" class="index-return-link">
+          Go Home
+        </Link>
+      </div>
     );
   }
 }

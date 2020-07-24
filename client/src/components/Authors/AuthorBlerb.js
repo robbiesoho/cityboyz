@@ -1,14 +1,23 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
 
 import { connect } from "react-redux";
 
 class AuthorBlerb extends Component {
   render() {
+    const image = this.props.author.image;
+
+    if (typeof image === "undefined") {
+      return <p>Loading!</p>;
+    }
+
     return (
-      <Container>
-        <h1>This is a blerb for {this.props.author.name}</h1>
-      </Container>
+      <div class="author-blerb">
+        <div class="blerb-txt">{this.props.author.description}</div>
+        <img
+          class="blerb-photo"
+          src={require(`../../../public/authorImages/${image}`)}
+        />
+      </div>
     );
   }
 }

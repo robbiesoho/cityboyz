@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Articles from "./components/Articles/Articles";
 import Article from "./components/Articles/Article";
+import Footer from "./components/Footer";
 
 import { Provider } from "react-redux";
 import store from "./store";
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/article/:id" component={Article} />
           </Switch>
         </Router>
+        <Footer />
       </div>
     </Provider>
   );

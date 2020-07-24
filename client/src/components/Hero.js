@@ -3,8 +3,11 @@ import React, { Component } from "react";
 class Hero extends Component {
   render() {
     return (
-      <div>
-        <h1 id="hero-title">City Boys</h1>
+      <div id="hero">
+        <div>
+          <h1 id="hero-title">City Boyz</h1>
+          <h1 id="little-media">Media</h1>
+        </div>
       </div>
     );
   }

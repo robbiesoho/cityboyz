@@ -11,14 +11,20 @@ class ArticlePreview extends Component {
     const article = this.props;
 
     return (
-      <div>
-        {article.name}
-        <br />
-        {article.author}
-        <br />
-        {article._id}
-        <br />
-        <Link to={articlePath}>link here</Link>
+      <div class="preview-card">
+        <Link class="card-name" to={articlePath}>
+          {article.name}
+        </Link>
+
+        <div class="card-author">by {article.author}</div>
+
+        <div class="card-preview">{article.preview}</div>
+
+        <div class="card-link-container">
+          <Link class="card-link" to={articlePath}>
+            Read more
+          </Link>
+        </div>
       </div>
     );
   }

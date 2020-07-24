@@ -10,7 +10,10 @@ const AuthorSchema = new Schema({
   description: {
     type: String,
   },
-  image: {},
+  image: {
+    data: Buffer,
+    type: String,
+  },
   articles: {},
 });
 
