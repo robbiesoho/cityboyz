@@ -88,8 +88,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: "Oswald", sans-serif;
-
+  color: black;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -126,14 +125,20 @@ q:after {
 
 /* css reset end */
 
-/* * {
+.loading {
   background-color: lightgray;
-} */
+  font-size: 3rem;
+  text-align: center;
+  margin: 20% 10px 0 10px;
+}
 
-/* hero */
+body {
+  font-family: "Oswald", sans-serif;
+}
 
 #hero {
   font-size: 7rem;
+  font-size: 10vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -184,18 +189,20 @@ q:after {
 
 #featured {
   background-color: lightgray;
-  height: 35vh;
+  height: 34.9vh;
   border: 2px black solid;
+  padding: 10px 20px 2.5vh 5vw;
 }
 
 #featured-title {
   font-size: 2rem;
-  padding: 20px;
+  padding-bottom: 15px;
   font-style: italic;
 }
 
 #featured-details {
   margin-left: 10vw;
+  margin-bottom: 20px;
 }
 #featured-name {
   font-size: 2rem;
@@ -209,6 +216,7 @@ q:after {
 #featured-preview {
   font-size: 1.3rem;
   padding: 0 10px 10px 7vw;
+
   text-indent: 2em;
 }
 
@@ -226,8 +234,7 @@ q:after {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  /* background-color: lightgray; */
-  /* border: solid black 1px; */
+
   position: relative;
 }
 .preview-card::before {
@@ -272,13 +279,23 @@ q:after {
 }
 
 .article-header {
-  height: 40px;
+  height: 45px;
   top: 0;
   width: 100%;
   background-color: lightgray;
-  color: black;
-  /* text-align: center; */
+
   font-size: 1.3rem;
+}
+.article-header > * {
+  margin-left: 40px;
+
+  /* margin: 1vh 0 0 30px; */
+  /* padding: 10px; */
+}
+
+#header-img {
+  width: 40px;
+  margin-left: 10px;
 }
 
 .aritcle-name {
@@ -290,22 +307,37 @@ q:after {
 
 .aritcle-preview {
   font-weight: -1;
-  /* color: grey; */
+
   opacity: 0.45;
   text-align: center;
   padding-bottom: 10px;
 }
 
-.aritcle-mark {
+.author-mark {
+  display: flex;
+
+  width: 3vw;
+  margin-left: 2rem;
+  flex-direction: row;
+  align-items: center;
+}
+
+.aritcle-mark-photo {
+  border: 1.5px solid black;
+  height: auto;
+  width: 100px;
+  border-radius: 50%;
+  margin: 10px;
 }
 
 .aritcle-author {
-  padding-left: 10vw;
   font-size: 1.3rem;
+  font-family: "Lora";
 }
 
 .aritcle-body {
   padding: 35px 20px 20px 20px;
+  font-family: "Lora";
 }
 
 .article-paragraph {
@@ -320,29 +352,29 @@ q:after {
 }
 
 .author-blerb {
-  /* text-align: center; */
   padding: 20px;
   font-size: 1.1rem;
-  /* position: relative; */
-  border: 1px black solid;
+  position: relative;
+
+  height: auto;
+  display: flex;
+  flex-wrap: no-wrap;
 }
 
 .blerb-txt {
-  /* float: left; */
-  /* position: absolute; */
+  text-indent: 2em;
+  display: inline-block;
 }
 
 .blerb-photo {
-  width: 100px;
-  height: auto;
+  border: 1.5px solid black;
+  height: 100px;
   border-radius: 50%;
-  /* float: right; */
-  top: 0;
-  /* position: absolute; */
+  right: 0;
+  margin: 15px;
 }
 
 .index-return-link {
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,7 +391,7 @@ q:after {
   bottom: 0;
   width: 100%;
   background-color: lightgray;
-  color: black;
+
   /* text-align: center; */
   font-size: 1.3rem;
 }
@@ -370,3 +402,57 @@ q:after {
   align-items: center;
 }
 /* footer end */
+
+/* media query start */
+@media screen and (min-width: 700px) {
+  /* article previews */
+  .article-previews-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .preview-card {
+    font-size: 1rem;
+
+    height: 40vh;
+
+    width: 48.5vw;
+    text-align: center;
+  }
+
+  .card-name {
+    font-size: 2rem;
+  }
+  .card-author {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  .card-preview {
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+  }
+
+  .card-link {
+    font-size: 1.1rem;
+  }
+
+  /* article preview end */
+}
+
+@media screen and (min-width: 1100px) {
+  #hero-title {
+    font-size: 9.5rem;
+  }
+
+  #little-media {
+    padding-top: 65px;
+    font-size: 3rem;
+  }
+
+  /* hero end */
+  .preview-card {
+    width: 32.5vw;
+  }
+}

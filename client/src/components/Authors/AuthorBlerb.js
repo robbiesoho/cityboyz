@@ -4,18 +4,18 @@ import { connect } from "react-redux";
 
 class AuthorBlerb extends Component {
   render() {
-    const image = this.props.author.image;
+    const data = this.props.author;
 
-    if (typeof image === "undefined") {
+    if (typeof data.image === "undefined") {
       return <p>Loading!</p>;
     }
 
     return (
       <div class="author-blerb">
-        <div class="blerb-txt">{this.props.author.description}</div>
+        <div class="blerb-txt">{data.description}</div>
         <img
           class="blerb-photo"
-          src={require(`../../../public/authorImages/${image}`)}
+          src={require(`../../../public/authorImages/${data.image}`)}
         />
       </div>
     );

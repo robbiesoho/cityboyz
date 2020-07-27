@@ -7,6 +7,7 @@ import { getAuthor } from "../../actions/authorActions";
 import PropTypes from "prop-types";
 import AuthorBlerb from "../Authors/AuthorBlerb";
 import AuthorMark from "../Authors/AuthorMark";
+import Footer from "../Footer";
 
 class Article extends Component {
   componentDidMount() {
@@ -23,12 +24,20 @@ class Article extends Component {
     const data = this.props.article.article;
 
     if (typeof data === "undefined") {
-      return <p>Loading!</p>;
+      return (
+        <p className="loading">
+          City Boyz is loading! If you can read this, refresh your page
+        </p>
+      );
     }
 
     return (
       <div class="article-container">
-        <div class="article-header"></div>
+        <div class="article-header">
+          <Link class="arthead-link" to="/">
+            City Boyz home
+          </Link>
+        </div>
 
         <p class="aritcle-name">{data.name}</p>
         <p class="aritcle-preview">{data.preview}</p>
@@ -40,9 +49,7 @@ class Article extends Component {
         </p>
         <div class="article-separator"></div>
         <AuthorBlerb />
-        <Link to="/" class="index-return-link">
-          Go Home
-        </Link>
+        <Footer />
       </div>
     );
   }
