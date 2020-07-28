@@ -28,6 +28,7 @@ class Articles extends Component {
         </p>
       );
     }
+    console.log(this.props);
     return (
       <div id="articles-container">
         <Hero />

@@ -13,10 +13,8 @@ const app = express();
 app.use(bodyParser.json());
 
 //set static folder
-app.use(express.static("client/build"));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
+
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 // DB Config
 const db = require("./config/keys").mongoURI;
