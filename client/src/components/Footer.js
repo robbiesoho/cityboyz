@@ -8,7 +8,7 @@ class Footer extends Component {
           <li id="footer-1">
             <a href="https://www.robport.dev/">RP | DEV</a>© 2020
           </li>
-          <li id="footer-2">Contact Webmaster</li>
+          <li id="footer-2">Contact Editor</li>
         </ul>
       </div>
     );
