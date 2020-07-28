@@ -20,7 +20,7 @@ class Articles extends Component {
   render() {
     const { articles } = this.props.article;
     const featuredArticle = this.props.article.articles[0];
-
+    console.log(this.props);
     if (typeof featuredArticle === "undefined") {
       return (
         <p className="loading">
@@ -28,7 +28,7 @@ class Articles extends Component {
         </p>
       );
     }
-    console.log(this.props);
+
     return (
       <div id="articles-container">
         <Hero />
