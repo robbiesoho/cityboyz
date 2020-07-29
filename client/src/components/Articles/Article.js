@@ -61,8 +61,14 @@ Article.propTypes = {
   article: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  article: state.article,
-});
+const mapStateToProps = (state) => {
+  console.log("My store state ===>", state); // log the `state` and see the exact path for articles
+  return {
+    article: state.article.articles,
+  };
+};
+// const mapStateToProps = (state) => ({
+//   article: state.article,
+// });
 
 export default connect(mapStateToProps, { getArticle, getAuthor })(Article);
