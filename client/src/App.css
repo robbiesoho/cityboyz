@@ -193,6 +193,9 @@ body {
   height: 34.9vh;
   border: 2px black solid;
   padding: 10px 20px 4vh 5vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #featured-title {
@@ -235,7 +238,6 @@ body {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-
   position: relative;
 }
 .preview-card::before {
@@ -412,7 +414,7 @@ body {
     justify-content: space-between;
   }
   .preview-card {
-    padding: 50px 1px 15px 1px;
+    padding: 30px 1px 15px 1px;
     font-size: 1rem;
     height: 30vh;
     width: 48.5vw;
