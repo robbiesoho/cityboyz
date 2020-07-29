@@ -24,7 +24,6 @@ class Article extends Component {
     const data = this.props.article.article;
 
     console.log(this.props);
-
     if (typeof data === "undefined") {
       return (
         <p className="loading">
@@ -66,7 +65,7 @@ Article.propTypes = {
 const mapStateToProps = (state) => {
   console.log("My store state ===>", state); // log the `state` and see the exact path for articles
   return {
-    article: state.article,
+    article: state.article.articles,
   };
 };
 // const mapStateToProps = (state) => ({
