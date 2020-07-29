@@ -143,7 +143,7 @@ body {
   padding: 0 10px 20px 10px;
   position: relative;
   height: 65vh;
-  width: 100%;
+  /* width: 100%; */
   left: 0;
   right: 0;
 }
@@ -169,7 +169,7 @@ body {
 #hero-title {
   font-size: 6.9rem;
 
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +193,7 @@ body {
   height: 34.9vh;
   border: 2px black solid;
   padding: 10px 20px 4vh 5vw;
-  width: 100%;
+
   display: flex;
   flex-direction: column;
 }
