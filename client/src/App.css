@@ -137,8 +137,6 @@ body {
 }
 
 #hero {
-  font-size: 7rem;
-  font-size: 10vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -146,7 +144,6 @@ body {
   position: relative;
   height: 65vh;
   width: 100%;
-
   left: 0;
   right: 0;
 }
@@ -165,7 +162,7 @@ body {
 }
 
 #hero-title {
-  font-size: 7rem;
+  font-size: 6.5rem;
   padding: 30vh 0 20px 0;
   height: 30vh;
   width: 100%;
@@ -179,7 +176,7 @@ body {
 
 #little-media {
   padding-top: 45px;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-style: italic;
 }
 
@@ -191,7 +188,7 @@ body {
   background-color: lightgray;
   height: 34.9vh;
   border: 2px black solid;
-  padding: 10px 20px 2.5vh 5vw;
+  padding: 10px 20px 4vh 5vw;
 }
 
 #featured-title {
@@ -335,6 +332,7 @@ body {
 .aritcle-body {
   padding: 35px 20px 20px 20px;
   font-family: "Lora";
+  line-height: 2;
 }
 
 .article-paragraph {
