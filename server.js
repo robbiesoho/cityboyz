@@ -16,10 +16,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-// });
-
 // DB Config
 const db = require("./config/keys").mongoURI;
 
@@ -35,3 +31,8 @@ app.use(authors, articles);
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`server started on port ${port}`));
+
+// this goes here
+app.get("/*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});

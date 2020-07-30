@@ -11,10 +11,10 @@ class AuthorBlerb extends Component {
     }
 
     return (
-      <div class="author-blerb">
-        <div class="blerb-txt">{data.description}</div>
+      <div className="author-blerb">
+        <div className="blerb-txt">{data.description}</div>
         <img
-          class="blerb-photo"
+          className="blerb-photo"
           src={require(`../../../public/authorImages/${data.image}`)}
         />
       </div>

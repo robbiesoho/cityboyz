@@ -11,7 +11,7 @@ class ArticlePreview extends Component {
     const article = this.props;
 
     return (
-      <div className="preview-card">
+      <div class="preview-card">
         <Link className="card-name" to={articlePath}>
           {article.name}
         </Link>

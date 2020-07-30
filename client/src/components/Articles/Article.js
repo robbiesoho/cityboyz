@@ -33,22 +33,22 @@ class Article extends Component {
     }
 
     return (
-      <div class="article-container">
-        <div class="article-header">
-          <Link class="arthead-link" to="/">
+      <div className="article-container">
+        <div className="article-header">
+          <Link className="arthead-link" to="/">
             City Boyz home
           </Link>
         </div>
 
-        <p class="aritcle-name">{data.name}</p>
-        <p class="aritcle-preview">{data.preview}</p>
+        <p className="aritcle-name">{data.name}</p>
+        <p className="aritcle-preview">{data.preview}</p>
         <AuthorMark />
-        <p class="aritcle-body">
+        <article className="aritcle-body">
           {data.body.split("\r").map((c) => {
-            return <p class="article-paragraph"> {c} </p>;
+            return <p className="article-paragraph"> {c} </p>;
           })}
-        </p>
-        <div class="article-separator"></div>
+        </article>
+        <div className="article-separator"></div>
         <AuthorBlerb />
         <Footer />
       </div>

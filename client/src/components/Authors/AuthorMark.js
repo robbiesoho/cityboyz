@@ -11,10 +11,10 @@ class AuthorMark extends Component {
     }
 
     return (
-      <div class="author-mark">
-        <p class="aritcle-author">{data.name}</p>
+      <div className="author-mark">
+        <p className="aritcle-author">{data.name}</p>
         <img
-          class="aritcle-mark-photo"
+          className="aritcle-mark-photo"
           src={require(`../../../public/authorImages/${data.image}`)}
         />
       </div>

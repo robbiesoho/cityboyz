@@ -87,7 +87,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 90%;
+  font-size: 92%;
   color: black;
   vertical-align: baseline;
 }
@@ -137,16 +137,13 @@ body {
 }
 
 #hero {
-  font-size: 7rem;
-  font-size: 10vw;
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 0 10px 20px 10px;
   position: relative;
   height: 65vh;
-  width: 100%;
-
+  /* width: 100%; */
   left: 0;
   right: 0;
 }
@@ -164,11 +161,15 @@ body {
   opacity: 0.2;
 }
 
+#hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #hero-title {
-  font-size: 7rem;
-  padding: 30vh 0 20px 0;
-  height: 30vh;
-  width: 100%;
+  font-size: 6.9rem;
+
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,8 +179,8 @@ body {
 }
 
 #little-media {
-  padding-top: 45px;
-  font-size: 2rem;
+  /* padding-top: 0; */
+  font-size: 1.9rem;
   font-style: italic;
 }
 
@@ -191,7 +192,10 @@ body {
   background-color: lightgray;
   height: 34.9vh;
   border: 2px black solid;
-  padding: 10px 20px 2.5vh 5vw;
+  padding: 10px 20px 4vh 5vw;
+
+  display: flex;
+  flex-direction: column;
 }
 
 #featured-title {
@@ -234,7 +238,6 @@ body {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-
   position: relative;
 }
 .preview-card::before {
@@ -335,6 +338,7 @@ body {
 .aritcle-body {
   padding: 35px 20px 20px 20px;
   font-family: "Lora";
+  line-height: 2;
 }
 
 .article-paragraph {
@@ -410,10 +414,9 @@ body {
     justify-content: space-between;
   }
   .preview-card {
+    padding: 30px 1px 15px 1px;
     font-size: 1rem;
-
-    height: 40vh;
-
+    height: 30vh;
     width: 48.5vw;
     text-align: center;
   }
@@ -444,12 +447,14 @@ body {
   }
 
   #little-media {
-    padding-top: 65px;
     font-size: 3rem;
   }
 
   /* hero end */
   .preview-card {
     width: 32.5vw;
+  }
+  .card-preview {
+    padding: 5px;
   }
 }
