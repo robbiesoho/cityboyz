@@ -167,9 +167,8 @@ body {
   justify-content: center;
 }
 #hero-title {
-  font-size: 6.9rem;
+  font-size: 8rem;
 
-  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,7 +178,6 @@ body {
 }
 
 #little-media {
-  /* padding-top: 0; */
   font-size: 1.9rem;
   font-style: italic;
 }
@@ -196,6 +194,7 @@ body {
 
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 #featured-title {
@@ -220,7 +219,6 @@ body {
 #featured-preview {
   font-size: 1.3rem;
   padding: 0 10px 10px 7vw;
-
   text-indent: 2em;
 }
 
@@ -228,7 +226,7 @@ body {
 
 /* article previews */
 #article-previews-title {
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 10px;
   font-style: italic;
 }
@@ -239,6 +237,9 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+  /* padding-bottom: 20px; */
+  height: 100%;
 }
 .preview-card::before {
   z-index: -1;
